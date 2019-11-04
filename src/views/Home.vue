@@ -1,17 +1,23 @@
 <template>
   <div class="home">
-    <mooc-star></mooc-star>
+    <mooc-star v-model="starVal"></mooc-star>
+    {{starVal}}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  data () {
+    return {
+      starVal: 3
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
   .home {
-    margin: 50px auto;
-    width: 1200px;
+    margin: 100px auto;
+    width: 800px;
   }
 </style>
