@@ -1,7 +1,11 @@
 <template>
   <div class="home">
-    <mooc-star v-model="starVal"></mooc-star>
-    {{starVal}}
+    <mooc-star
+      v-model="starVal"
+      :size="30"
+      icon-class="iconbanxing"
+      :show-text="true"
+    ></mooc-star>
   </div>
 </template>
 
