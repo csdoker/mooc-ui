@@ -13,14 +13,21 @@
     >
       <i
         class="iconfont iconxingxing"
+        :class="iconClass"
         :style="{
-          color: getIconColor(n)
+          'font-size': `${ size }px`,
+          'color': getIconColor(n)
         }"
       ></i>
     </span>
     <span
-      v-if="showValue"
-      class="mooc-star-text">
+      v-if="showValue || showText"
+      class="mooc-star-text"
+      :style="{
+        'color': textColor,
+        'font-size': `${ size }px`
+      }"
+    >
       {{ text }}
     </span>
   </div>
@@ -104,6 +111,8 @@ export default {
       let result = ''
       if (this.showValue) {
         result = this.currentValue
+      } else if (this.showText) {
+        result = this.texts[this.currentValue - 1]
       }
       return result
     }
