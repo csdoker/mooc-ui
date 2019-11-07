@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <mooc-star v-model="starVal"></mooc-star>
-    {{starVal}}
+    <mooc-badge></mooc-badge>
   </div>
 </template>
 

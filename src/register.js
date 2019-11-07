@@ -1,7 +1,9 @@
 import Star from 'base/star/index.js'
+import Badge from 'base/badge/index.js'
 
 const components = [
-  Star
+  Star,
+  Badge
 ]
 
 const install = function (Vue) {
@@ -16,5 +18,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  Star
+  Star,
+  Badge
 }
