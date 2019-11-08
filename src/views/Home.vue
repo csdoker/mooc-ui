@@ -1,20 +1,7 @@
 <template>
   <div class="home">
-    <mooc-badge type="primary" :value="10">
-      <div class="mooc-button">消息</div>
-    </mooc-badge>
-    <mooc-badge type="success" :value="100" :max="99">
-      <div class="mooc-button">消息</div>
-    </mooc-badge>
-    <mooc-badge :value="100" :is-dot="true">
-      <div class="mooc-button">消息</div>
-    </mooc-badge>
-    <mooc-badge value="hot">
-      <div class="mooc-button">消息</div>
-    </mooc-badge>
-    <mooc-badge value="hot" :hidden="true">
-      <div class="mooc-button">消息</div>
-    </mooc-badge>
+    <mooc-switch v-model="value" active-color="#f60" inactive-color="#666"></mooc-switch>
+    {{value}}
   </div>
 </template>
 
@@ -23,6 +10,7 @@ export default {
   name: 'home',
   data () {
     return {
+      value: true,
       starVal: 3
     }
   }
