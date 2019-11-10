@@ -1,7 +1,12 @@
 <template>
   <div class="home">
-    <mooc-switch v-model="value" active-color="#f60" inactive-color="#666"></mooc-switch>
-    {{value}}
+    <mooc-switch
+      v-model="value"
+      active-color="#f60"
+      active-text="按月付"
+      inactive-color="#666"
+      inactive-text="按年付"
+    ></mooc-switch>
   </div>
 </template>
 

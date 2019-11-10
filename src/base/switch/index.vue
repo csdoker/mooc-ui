@@ -10,31 +10,14 @@
     <input
       ref="checkbox"
       type="checkbox"
-      :name="name"
       class="mooc-switch-input"
       @change="handleInputChange"
     >
-    <span
-      v-if="inactiveText"
-      v-text="inactiveText"
-      class="mooc-switch-label mooc-switch-label-left"
-      :class="{
-        'is-active': !checked
-      }"
-    ></span>
     <span
       ref="SwitchRadius"
       class="mooc-switch-radius"
       :style="{
         width: `${width}px`
-      }"
-    ></span>
-    <span
-      v-if="activeText"
-      v-text="activeText"
-      class="mooc-switch-label mooc-switch-label-right"
-      :class="{
-        'is-active': checked
       }"
     ></span>
   </div>
@@ -51,33 +34,13 @@ export default {
       type: Number,
       default: 40
     },
-    activeColor: {
-      type: String,
-      default: ''
-    },
-    activeText: {
-      type: String,
-      default: ''
-    },
     activeValue: {
       type: [Boolean, String, Number],
       default: true
     },
-    inactiveColor: {
-      type: String,
-      default: ''
-    },
-    inactiveText: {
-      type: String,
-      default: ''
-    },
     inactiveValue: {
       type: [Boolean, String, Number],
       default: false
-    },
-    name: {
-      type: String,
-      default: ''
     },
     disabled: {
       type: Boolean,
@@ -90,7 +53,6 @@ export default {
     }
   },
   mounted () {
-    this.setSwitchColor()
     this.$refs.checkbox.checked = this.checked
   },
   methods: {
@@ -107,22 +69,6 @@ export default {
       this.$nextTick(() => {
         this.$refs.checkbox.checked = this.checked
       })
-    },
-    setSwitchColor () {
-      const color = this.checked ? this.activeColor : this.inactiveColor
-      if (color) {
-        let switchRaduis = this.$refs['SwitchRadius']
-        switchRaduis.style.backgroundColor = color
-        switchRaduis.style.borderColor = color
-      }
-    }
-  },
-  watch: {
-    checked (newVal, oldVal) {
-      if (newVal === oldVal) {
-        return false
-      }
-      this.setSwitchColor()
     }
   }
 }
@@ -141,11 +87,11 @@ export default {
         border-color: $base-primary;
         &::after
           left: 100%;
-          margin-left: unit(- $switch-radius-border-width - $switch-radius-btn-size, 'px');
+          margin-left: unit(1 - 18, 'px');
     &.is-disabled
       pointer-events: none;
       .mooc-switch-radius
-        opacity: $switch-disabled-opacity;
+        opacity: 0.6;
         cursor: not-allowed;
     .mooc-switch-input
       width: 0;
@@ -155,32 +101,32 @@ export default {
       display: inline-block;
       vertical-align: middle;
     .mooc-switch-label
-      transition: color $switch-transition-duration;
-      font-size: $switch-label-font-size;
+      transition: color 0.3s;
+      font-size: 14px;
       font-weight: normal;
       &.is-active
         color: $base-primary;
       &-left
-        margin-right: $switch-label-margin;
+        margin-right: 10px;
       &-right
-        margin-left: $switch-label-margin;
+        margin-left: 10px;
     .mooc-switch-radius
       position: relative;
-      height: $switch-radius-height;
-      line-height: $switch-radius-height;
+      height: 20px;
+      line-height: 20px;
       background-color: $base-info;
-      border: $switch-radius-border-width $switch-radius-border-style $base-info;
-      border-radius: $switch-radius-border-radius;
+      border: 1px solid $base-info;
+      border-radius: 10px;
       box-sizing: border-box;
       cursor: pointer;
       &::after
         content: '';
         position: absolute;
-        left: $switch-radius-offset;
-        top: $switch-radius-offset;
-        width: $switch-radius-btn-size;
-        height: $switch-radius-btn-size;
+        left: 1px;
+        top: 1px;
+        width: 16px;
+        height: 16px;
         background-color: #fff;
-        border-radius: $base-border-radius-circle;
-        transition: all $switch-transition-duration;
+        border-radius: 50%;
+        transition: all 0.3s;
 </style>
