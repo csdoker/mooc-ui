@@ -62,18 +62,16 @@ export default {
   .mooc-badge
     position: relative
     display: inline-block;
-    vertical-align: middle;
     .mooc-badge-content
       display: inline-block;
       padding: $badge-veritcal-padding $badge-horizontal-padding;
       height: $badge-size;
       line-height: $badge-size;
       border-radius: $badge-border-radius;
-      border: $badge-border-width $badge-border-style $badge-border-color;
       background-color: $base-danger;
       font-size: $badge-font-size;
       color: $badge-color;
-      badge-status($base-primary, $base-success, $base-warning, $base-danger, $base-info);
+      badge-type($badge-types, $base-primary $base-success $base-warning $base-danger $base-info);
       &.is-absolute
         position: absolute;
         top: 0;
