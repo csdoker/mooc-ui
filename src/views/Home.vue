@@ -1,11 +1,8 @@
 <template>
   <div class="home">
-    <mooc-progress :percentage="percentage" :height="height" :show-text="false"></mooc-progress>
-
-    <button @click="handleReduceClick">减少</button>
-    <button @click="handleAddClick">增长</button>
-    <button @click="handleStartClick">开始(高{{height}})</button>
-    <button @click="handleStopClick">结束(高{{height}})</button>
+    <mooc-steps>
+      <mooc-step></mooc-step>
+    </mooc-steps>
   </div>
 </template>
 
@@ -16,22 +13,6 @@ export default {
     return {
       height: 10,
       percentage: 100
-    }
-  },
-  methods: {
-    handleReduceClick () {
-      this.percentage -= 10
-    },
-    handleAddClick () {
-      this.percentage += 10
-    },
-    handleStartClick () {
-      this.timer = setInterval(() => {
-        this.height++
-      }, 50)
-    },
-    handleStopClick () {
-      clearInterval(this.timer)
     }
   }
 }
