@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <mooc-progress :percentage="percentage" :height="height"></mooc-progress>
+    <mooc-progress :percentage="percentage" :height="height" :show-text="false"></mooc-progress>
 
     <button @click="handleReduceClick">减少</button>
     <button @click="handleAddClick">增长</button>
