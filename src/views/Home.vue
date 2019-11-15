@@ -2,6 +2,9 @@
   <div class="home">
     <mooc-steps>
       <mooc-step></mooc-step>
+      <mooc-step></mooc-step>
+      <mooc-step></mooc-step>
+      <mooc-step></mooc-step>
     </mooc-steps>
   </div>
 </template>
